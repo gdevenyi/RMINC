@@ -1216,7 +1216,7 @@ writeVertex <- function(
     # assume there will be a column
     readr::write_csv(
       tibble::as_data_frame(vertexData),
-      path = filename,
+      file = filename,
       append = append.file,
       col_names = col.names
     )
