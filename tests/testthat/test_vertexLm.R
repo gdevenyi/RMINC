@@ -1,9 +1,9 @@
 library(testthat)
 context("vertexLm")
 
-dataPath = "/home/vfonov/src/RMINC/tests/testthat/dataPath"
-#if(!exists("dataPath"))
-#  dataPath <- tempdir()
+if (!exists("dataPath")) {
+  dataPath <- tempdir()
+}
 
 getRMINCTestData(dataPath)
 dataPath <- file.path(dataPath, "rminctestdata/")
