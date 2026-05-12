@@ -60,8 +60,10 @@ SEXP paired_t_test(SEXP voxel, SEXP grouping) {
   PROTECT(output=allocVector(REALSXP, 1));
   t = REAL(output);
 
-  group0 = malloc(sizeof(double) * n2);
-  group1 = malloc(sizeof(double) * n2);
+  /* allocate n elements per group: the grouping vector is not guaranteed
+   * to be perfectly balanced, so count0 or count1 may reach up to n */
+  group0 = malloc(sizeof(double) * n);
+  group1 = malloc(sizeof(double) * n);
 
   count0 = 0;
   count1 = 0;
